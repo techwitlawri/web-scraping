@@ -56,10 +56,10 @@ def read(extracted):
     row = [item.strip() for item in row]
     band,city,date = row
     cursor = connection.cursor() 
-    cursor.execute("SELECT * FROM events WHERE band =? AND city=? AND date=?",  (band, city, date))
+    cursor.execute("SELECT * FROM events WHERE band =? AND city=? AND date=?",(band, city, date))
     rows = cursor.fetchall()
     print(rows) 
-    return(row)
+    return(rows)
 
 if __name__ == "__main__":
     while True:
